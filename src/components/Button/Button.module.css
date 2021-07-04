@@ -1,0 +1,19 @@
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    border: 1px solid var(--primary);
+    border-radius: var(--radius);
+
+    background-color: transparent;
+    color: var(--font);
+
+    text-transform: uppercase;
+    text-decoration: none;
+    text-shadow: var(--text-shadow);
+
+    transition: all 150ms ease;
+}
+
+.btn:hover {
+    background-color: var(--primary);
+}

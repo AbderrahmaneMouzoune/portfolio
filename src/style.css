@@ -1,0 +1,29 @@
+:root {
+    --primary: #DE007B;
+    --secondary: #0BD6D6;
+    --font: #fff;
+    --text-shadow: 0px 0px 3px #FFFFFF;
+    --font-family-primary: "Ubuntu",Arial,sans-serif;
+    --font-family-secondary: "Open Sans",Arial,sans-serif;
+    --radius: 10px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-secondary);
+    background-color: purple;
+    color: var(--font);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-primary);
+}
+
+.color-primary {
+    color: var(--primary);
+}
+
+.color-secondary {
+    color: var(--secondary);
+}

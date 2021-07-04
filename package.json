@@ -22,8 +22,10 @@
   },
   "homepage": "https://github.com/AbderrahmaneMouzoune/starter-pack-project#readme",
   "dependencies": {
+    "bootstrap": "^5.0.2",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "reactstrap": "^8.9.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
