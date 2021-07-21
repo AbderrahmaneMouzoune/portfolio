@@ -1,13 +1,9 @@
 import styles from './Portfolio.module.css'
 
-interface IPortfolio {
+interface IPortfolio {}
+
+function Portfolio({}: IPortfolio) {
+    return <div></div>
 }
 
-function Portfolio({} : IPortfolio) {
-    return (  
-        <div>
-        </div>
-    )
-}
-
-export default Portfolio;
+export default Portfolio

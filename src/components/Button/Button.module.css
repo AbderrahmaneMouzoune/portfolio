@@ -5,15 +5,15 @@
     border-radius: var(--radius);
 
     background-color: transparent;
-    color: var(--font);
+    color: var(--color-font-light);
 
     text-transform: uppercase;
     text-decoration: none;
-    text-shadow: var(--text-shadow);
 
     transition: all 150ms ease;
 }
 
 .btn:hover {
     background-color: var(--primary);
+    text-shadow: var(--text-shadow);
 }

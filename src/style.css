@@ -1,23 +1,34 @@
+@import url(./assets/Fonts.css);
+@import url(./assets/Utilities.css);
+
 :root {
     --primary: #DE007B;
     --secondary: #0BD6D6;
-    --font: #fff;
+
+    --color-font: hsl(0deg 0% 75%);
+    --color-font-light: hsl(0deg 0% 100%);
+    --font-family-primary: "Open Sans",Arial,sans-serif;
+    --font-family-secondary: "Ubuntu",Arial,sans-serif;
+    --font-size-base: 18px;
+
     --text-shadow: 0px 0px 3px #FFFFFF;
-    --font-family-primary: "Ubuntu",Arial,sans-serif;
-    --font-family-secondary: "Open Sans",Arial,sans-serif;
+
     --radius: 10px;
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-family: var(--font-family-secondary);
-    background-color: purple;
-    color: var(--font);
-}
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-family-primary);
+    font-size: var(--font-size-base);
+    font-family: var(--font-family-secondary);
+    color: var(--color-font);
+
+    background: rgb(74,40,156);
+    background: -moz-radial-gradient(circle, rgba(74,40,156,1) 0%, rgba(0,9,43,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(74,40,156,1) 0%, rgba(0,9,43,1) 100%);
+    background: radial-gradient(circle, rgba(74,40,156,1) 0%, rgba(0,9,43,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4a289c",endColorstr="#00092b",GradientType=1);
 }
 
 .color-primary {
