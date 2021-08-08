@@ -1,4 +1,3 @@
-import Col from 'reactstrap/es/Col'
 import { Tag } from '../../assets/data/work'
 import styles from './TagItem.module.css'
 
@@ -12,7 +11,7 @@ function TagItem({ name, isActive, onClick }: ITagItem) {
     return (
         <div
             role="button"
-            className={'me-2 ' + (isActive ? styles.itemActive : styles.item)}
+            className={'me-2 mb-2 text-uppercase ' + (isActive ? styles.itemActive : styles.item)}
             onClick={onClick}
         >
             {name}

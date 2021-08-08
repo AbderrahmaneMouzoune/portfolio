@@ -22,7 +22,7 @@ export const Works = [
     {
         name: 'Work 3',
         url: 'http://localhost:8080',
-        tags: [TAGS[0]],
+        tags: [TAGS[2]],
     },
     {
         name: 'Work 4',

@@ -1,13 +1,14 @@
 @import url(./Utils/Fonts.css);
 @import url(./Utils/Utilities.css);
+
 :root {
     --primary: #DE007B;
     --secondary: #0BD6D6;
 
     --color-font: hsl(0deg 0% 75%);
     --color-font-light: hsl(0deg 0% 100%);
-    --font-family-primary: "Open Sans",Arial,sans-serif;
-    --font-family-secondary: "Ubuntu",Arial,sans-serif;
+    --font-family-primary: "Open sans",Arial,sans-serif;
+    --font-family-secondary: "Poppins",Arial,sans-serif;
 
     --text-shadow: 0px 0px 3px #FFFFFF;
     --gutter-x: 13px;

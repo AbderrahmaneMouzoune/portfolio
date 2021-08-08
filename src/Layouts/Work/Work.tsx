@@ -1,4 +1,4 @@
-import { Works, TAGS } from '../../assets/data/work'
+import { Works, TAGS, Tag, Work } from '../../assets/data/work'
 import { useState } from 'react'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import WorkItem from '../../components/WorkItem/WorkItem'
@@ -7,16 +7,25 @@ import styles from './Work.module.css'
 import { Container, Row } from 'reactstrap'
 
 export default function Portfolio() {
-    const [actualTag, setActualTag] = useState('HTML/CSS')
+    const [actualTag, setActualTag] = useState('')
+
+    const filterTags = (Tags : Tag[]) => Tags.filter((tag) => Works.some((work) => work.tags.includes(tag)))
+    const filterWorks = (Works : Work[]) => Works.filter((work) => work.tags.includes(actualTag) || actualTag === "")
 
     return (
         <main className={styles.main}>
             <Container>
                 <h2 className={styles.title + " pb-5"}>Works</h2>
                 <Row className={"justify-content-center"}>
-                    {TAGS.filter((tag) =>
-                        Works.some((work) => work.tags.includes(tag))
-                    ).map((tag, i) => (
+                    {filterTags(TAGS).length > 1 &&
+                        <TagItem
+                            key={'all'}
+                            name={'Tous'}
+                            isActive={actualTag === ""}
+                            onClick={() => setActualTag("")}
+                        />
+                    }
+                    {filterTags(TAGS).map((tag, i) => (
                         <TagItem
                             key={i.toString()}
                             name={tag}
@@ -27,7 +36,7 @@ export default function Portfolio() {
                 </Row>
                 <TransitionGroup className={'mt-5 row'}>
                     {/* Display work with actual tag */}
-                    {Works.filter((work) => work.tags.includes(actualTag)).map(
+                    {filterWorks(Works).map(
                         (work, i) => (
                             <CSSTransition
                                 key={i.toString()}
