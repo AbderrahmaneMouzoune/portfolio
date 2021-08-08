@@ -11,7 +11,8 @@ function WorkItem({ name, url, tags, cN }: IWork) {
         <Col md={4} sm={6} className={cN}>
             <div
                 className={
-                    styles.item + ' d-flex justify-content-center align-items-center'
+                    styles.item +
+                    ' d-flex justify-content-center align-items-center'
                 }
                 data-name={name}
                 data-url={url}

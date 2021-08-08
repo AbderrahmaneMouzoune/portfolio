@@ -3,7 +3,7 @@ import styles from './Hero.module.css'
 
 function Hero() {
     return (
-        <main className={styles.main}>
+        <main id="hero" className={styles.main}>
             <h1 className={styles.title}>Abderrahmane MOUZOUNE</h1>
             <h2 className={styles.subtitle}>Développeur web</h2>
             <div className={styles.btnWrapper}>

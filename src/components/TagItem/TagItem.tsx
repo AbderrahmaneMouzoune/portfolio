@@ -11,7 +11,10 @@ function TagItem({ name, isActive, onClick }: ITagItem) {
     return (
         <div
             role="button"
-            className={'me-2 mb-2 text-uppercase ' + (isActive ? styles.itemActive : styles.item)}
+            className={
+                'me-2 mb-2 text-uppercase ' +
+                (isActive ? styles.itemActive : styles.item)
+            }
             onClick={onClick}
         >
             {name}

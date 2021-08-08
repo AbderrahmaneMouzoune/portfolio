@@ -1,0 +1,11 @@
+.link {
+    color: var(--color-font);
+    text-decoration: none;
+    transition: all ease 150ms;
+}
+
+.link:hover {
+    color: var(--color-font-light);
+    text-shadow: var(--text-shadow);
+    transition: all ease 150ms;
+}

@@ -5,7 +5,7 @@ import { Col, Container, Row } from 'reactstrap'
 
 function About() {
     return (
-        <main className={styles.main}>
+        <main id="about" className={styles.main}>
             <Container className={'d-flex justify-content-center'}>
                 <Row>
                     <figure className={styles.imgWrapper}>
