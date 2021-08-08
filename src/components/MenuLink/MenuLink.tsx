@@ -6,9 +6,14 @@ interface IMenuLink {
     cN?: string
 }
 
-function MenuLink({label, link, cN}: IMenuLink) {
+function MenuLink({ label, link, cN }: IMenuLink) {
     return (
-        <a href={link} className={"text-uppercase " + styles.link + (cN ? " " + cN : "")}>{label}</a>
+        <a
+            href={link}
+            className={'text-uppercase ' + styles.link + (cN ? ' ' + cN : '')}
+        >
+            {label}
+        </a>
     )
 }
 

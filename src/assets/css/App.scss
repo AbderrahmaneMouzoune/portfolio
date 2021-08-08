@@ -1,4 +1,4 @@
-@import url(./Utils/Fonts.css);
+@import "~bootstrap/scss/bootstrap";
 
 :root {
     --primary: #DE007B;
@@ -35,4 +35,9 @@ body {
 
 .color-secondary {
     color: var(--secondary);
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-font-light);
 }

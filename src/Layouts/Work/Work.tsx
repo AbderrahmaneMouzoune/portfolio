@@ -5,6 +5,7 @@ import WorkItem from '../../components/WorkItem/WorkItem'
 import TagItem from '../../components/TagItem/TagItem'
 import styles from './Work.module.css'
 import { Container, Row } from 'reactstrap'
+import { isMobile } from 'is-mobile'
 
 export default function Portfolio() {
     const [actualTag, setActualTag] = useState('')
@@ -52,7 +53,9 @@ export default function Portfolio() {
                                 name={work.name}
                                 url={work.url}
                                 tags={work.tags}
-                                cN={i > 2 ? 'mt-4' : ''}
+                                cN={
+                                    i > 2 || (isMobile() && i > 0) ? 'mt-4' : ''
+                                }
                             />
                         </CSSTransition>
                     ))}
