@@ -1,0 +1,25 @@
+.item {
+    width: fit-content !important;
+    border-radius: 5px;
+    padding: 13px;
+    border: 1px solid var(--primary);
+    transition: all ease 0.2s;
+    cursor: pointer;
+}
+
+.item.active,
+.item:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+.itemActive {
+    width: fit-content !important;
+    border-radius: 5px;
+    padding: 13px;
+    border: 1px solid var(--primary);
+    transition: all ease 0.2s;
+    cursor: pointer;
+    background-color: var(--primary);
+    color: white;
+}

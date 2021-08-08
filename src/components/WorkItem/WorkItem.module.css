@@ -1,0 +1,14 @@
+.item {
+    border: 1px solid var(--secondary);
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    padding-top: 37.5%;
+    padding-bottom: 37.5%;
+    transition: all ease 0.2s;
+}
+
+.item:hover {
+    background-color: var(--secondary);
+    color: white;
+}
