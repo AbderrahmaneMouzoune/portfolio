@@ -22,21 +22,22 @@ function About() {
                         <div>
                             <p>
                                 {' '}
-                                Bonjour ! Je m&apos;appelle Abderrahmane MOUZOUNE, on
-                                m&apos;appelle plus souvent ABD ou Abder.{' '}
+                                Bonjour ! Je m&apos;appelle Abderrahmane
+                                MOUZOUNE, on m&apos;appelle plus souvent ABD ou
+                                Abder.{' '}
                                 <span role="img" aria-label="sourire">
                                     😁
                                 </span>{' '}
                             </p>
                             <p>
-                                Développeur Web avec une appétence pour
-                                le front-end.
+                                Développeur Web avec une appétence pour le
+                                front-end.
                             </p>
                             <p>
                                 Passionné par le monde du Web et des nouvelles
                                 technologies.{' '}
                             </p>
-                            <p className={"pt-3"}>
+                            <p className={'pt-3'}>
                                 Développons un monde plus ergonomique, plus
                                 intuitif.
                             </p>
@@ -51,7 +52,9 @@ function About() {
                         <Button
                             value={'Télécharger mon cv'}
                             link={'#cv'}
-                            classname={'mt-3' + (isMobile() ? ' me-auto ms-auto' : '')}
+                            classname={
+                                'mt-3' + (isMobile() ? ' me-auto ms-auto' : '')
+                            }
                         />
                     </Col>
                 </Row>

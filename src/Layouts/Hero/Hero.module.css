@@ -44,3 +44,11 @@
     display: flex;
     justify-content: center;
 }
+
+.planet {
+    bottom: 0;
+    left: 50px;
+    transform: translate(-50%, 50%);
+    width: 620px;
+    transition: all ease 250ms;
+}

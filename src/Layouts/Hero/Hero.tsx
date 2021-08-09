@@ -8,7 +8,9 @@ function Hero() {
         <main id="hero" className={styles.main}>
             <h1 className={styles.title}>Abderrahmane MOUZOUNE</h1>
             <h2 className={styles.subtitle}>Développeur web</h2>
-            <div className={styles.btnWrapper + (isMobile() ? ' flex-wrap' : '')}>
+            <div
+                className={styles.btnWrapper + (isMobile() ? ' flex-wrap' : '')}
+            >
                 <Button
                     value={'En savoir plus'}
                     link={'#about'}
@@ -20,9 +22,7 @@ function Hero() {
                     classname={'m-1'}
                 />
             </div>
-            <div>
-                <img src={Planet} alt="Planete avec un cercle" />
-            </div>
+            <img className={"position-absolute " + styles.planet} src={Planet} alt="Planete avec un cercle" />
         </main>
     )
 }
