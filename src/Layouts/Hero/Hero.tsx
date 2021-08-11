@@ -22,7 +22,11 @@ function Hero() {
                     classname={'m-1'}
                 />
             </div>
-            <img className={"position-absolute " + styles.planet} src={Planet} alt="Planete avec un cercle" />
+            <img
+                className={'position-absolute ' + styles.planet}
+                src={Planet}
+                alt="Planete avec un cercle"
+            />
         </main>
     )
 }

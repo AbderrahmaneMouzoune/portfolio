@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 import {
     Container,
     Row,
@@ -16,15 +16,14 @@ import {
     InputGroupText,
 } from 'reactstrap'
 import imgCard from '../../assets/img/contact_square.module.png'
-import Button from "../../components/Button/Button";
+import Button from '../../components/Button/Button'
 
 function Contact() {
+    const [squares1to6, setSquares1to6] = useState('')
+    const [squares7and8, setSquares7and8] = useState('')
 
-    const [squares1to6, setSquares1to6] = useState("");
-    const [squares7and8, setSquares7and8] = useState("");
-
-    const [emailFocus, setEmailFocus] = useState(false);
-    const [messageFocus, setMessageFocus] = useState(false);
+    const [emailFocus, setEmailFocus] = useState(false)
+    const [messageFocus, setMessageFocus] = useState(false)
 
     useEffect(() => {
         document.body.classList.toggle('register-page')
@@ -38,7 +37,7 @@ function Contact() {
             )
         }
     }, [])
-    const followCursor = (event: { clientX: number; clientY: number; }) => {
+    const followCursor = (event: { clientX: number; clientY: number }) => {
         const posX = event.clientX - window.innerWidth / 2
         const posY = event.clientY - window.innerWidth / 6
         setSquares1to6(
@@ -58,7 +57,7 @@ function Contact() {
     }
 
     return (
-        <main id="contact" className={""}>
+        <main id="contact" className={''}>
             <Container>
                 <Row>
                     <Col lg="5" md="6">
@@ -74,15 +73,19 @@ function Contact() {
                         />
                         <Card className="card-register">
                             <CardHeader>
-                                <CardImg
-                                    alt="..."
-                                    src={imgCard}
-                                />
+                                <CardImg alt="..." src={imgCard} />
                                 <CardTitle tag="h4">Register</CardTitle>
                             </CardHeader>
                             <CardBody>
                                 <Form className="form">
-                                    <InputGroup className={'input-group' + (emailFocus ? ' input-group-focus' : '')}>
+                                    <InputGroup
+                                        className={
+                                            'input-group' +
+                                            (emailFocus
+                                                ? ' input-group-focus'
+                                                : '')
+                                        }
+                                    >
                                         <InputGroupAddon addonType="prepend">
                                             <InputGroupText>
                                                 <i className="tim-icons icon-email-85" />
@@ -95,7 +98,14 @@ function Contact() {
                                             onBlur={() => setEmailFocus(false)}
                                         />
                                     </InputGroup>
-                                    <InputGroup className={'input-group' + (messageFocus ? ' input-group-focus' : '')}>
+                                    <InputGroup
+                                        className={
+                                            'input-group' +
+                                            (messageFocus
+                                                ? ' input-group-focus'
+                                                : '')
+                                        }
+                                    >
                                         <InputGroupAddon addonType="prepend">
                                             <InputGroupText>
                                                 <i className="tim-icons icon-lock-circle" />
@@ -115,7 +125,10 @@ function Contact() {
                                 </Form>
                             </CardBody>
                             <CardFooter>
-                                <Button value={"Envoyer le message"} link={""} />
+                                <Button
+                                    value={'Envoyer le message'}
+                                    link={''}
+                                />
                             </CardFooter>
                         </Card>
                     </Col>
