@@ -1,0 +1,27 @@
+.generic {
+    position: absolute;
+    width: fit-content;
+    z-index: -1;
+    transition: all ease 200ms;
+}
+
+.s1 {
+    top: 28%;
+    left: 3%;
+    transform: scale(.6);
+    opacity: .6;
+}
+
+.s2 {
+    top: 50%;
+    right: 5%;
+    transform: scale(1.3);
+    opacity: .9;
+}
+
+.s3 {
+    top: 75%;
+    left: 2%;
+    transform: scale(.4);
+    opacity: .4;
+}

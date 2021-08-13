@@ -1,0 +1,14 @@
+.first {
+    position: absolute;
+    top: -200px;
+    width: 120px;
+    right: 0;
+
+    transition: all ease 300ms;
+    animation: flyComete 100s infinite;
+}
+
+
+@keyframes flyComete {
+    to { top: -100%; right: 100%; }
+}

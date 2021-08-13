@@ -7,29 +7,20 @@
 
 .main {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     flex-wrap: wrap;
-}
-
-.main::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    background: transparent url(../../assets/img/background_star_p1.svg) no-repeat padding-box;
-    background-position: center;
-    background-size: cover;
-    mix-blend-mode: exclusion;
-    pointer-events: none;
-
-    opacity: .8;
 }
 
 .tagWrapper {
     display: flex;
     justify-content: center;
     width: 100%;
+}
+
+.planet {
+    width: 40% !important;
+    position: absolute;
+    bottom: -20%;
+    left: -20%;
+    mix-blend-mode: exclusion;
 }

@@ -5,12 +5,13 @@
     border: 1px solid var(--primary);
     transition: all ease 0.2s;
     cursor: pointer;
+    font-size: .825rem;
 }
 
 .item.active,
 .item:hover {
     background-color: var(--primary);
-    color: white;
+    color: var(--color-font-light);
 }
 
 .itemActive {
@@ -21,5 +22,6 @@
     transition: all ease 0.2s;
     cursor: pointer;
     background-color: var(--primary);
-    color: white;
+    color: var(--color-font-light);
+    font-size: .825rem;
 }

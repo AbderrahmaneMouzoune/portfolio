@@ -1,0 +1,12 @@
+.link {
+    color: var(--color-font);
+    border-radius: var(--radius);
+    font-size: 1.7em;
+    transition: all ease 300ms;
+}
+
+.link:hover {
+    color: var(--color-font-light);
+    text-shadow: var(--text-shadow);
+    transition: all ease 150ms;
+}

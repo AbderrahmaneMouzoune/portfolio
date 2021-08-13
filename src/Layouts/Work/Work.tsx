@@ -1,11 +1,12 @@
 import { Works, TAGS, Tag, Work } from '../../assets/data/work'
 import { useState } from 'react'
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import WorkItem from '../../components/WorkItem/WorkItem'
 import TagItem from '../../components/TagItem/TagItem'
 import styles from './Work.module.css'
 import { Container, Row } from 'reactstrap'
 import { isMobile } from 'is-mobile'
+import CirclePlanet from '../../assets/img/circle/circle_with_planet.module.svg'
+import { ParallaxProvider } from 'react-scroll-parallax'
 
 export default function Portfolio() {
     const [actualTag, setActualTag] = useState('')
@@ -39,27 +40,21 @@ export default function Portfolio() {
                         />
                     ))}
                 </Row>
-                <TransitionGroup className={'mt-5 row'}>
+
+                <Row className={'mt-5 position-relative'}>
                     {/* Display work with actual tag */}
                     {filterWorks(Works).map((work, i) => (
-                        <CSSTransition
-                            key={i.toString()}
-                            timeout={150}
-                            classNames={'test'}
-                            unmountOnExit
-                            appear
-                        >
-                            <WorkItem
-                                name={work.name}
-                                url={work.url}
-                                tags={work.tags}
-                                cN={
-                                    i > 2 || (isMobile() && i > 0) ? 'mt-4' : ''
-                                }
-                            />
-                        </CSSTransition>
+                        <WorkItem
+                            key={i}
+                            name={work.name}
+                            url={work.url}
+                            tags={work.tags}
+                            cN={i > 2 || (isMobile() && i > 0) ? 'mt-4' : ''}
+                        />
                     ))}
-                </TransitionGroup>
+
+                    <img className={styles.planet} src={CirclePlanet} alt="système astral" />
+                </Row>
             </Container>
         </main>
     )

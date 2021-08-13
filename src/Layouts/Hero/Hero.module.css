@@ -7,6 +7,7 @@
     align-content: center;
     height: 100vh;
     flex-wrap: wrap;
+    z-index: 1;
 }
 
 .main * {
@@ -21,7 +22,7 @@
     width: 100%;
     height: 100%;
 
-    background: transparent url(../../assets/img/background_hero.png) no-repeat padding-box;
+    /* background: transparent url(../../assets/img/background_hero.png) no-repeat padding-box; */
     background-position: center;
 
     opacity: .8;
@@ -46,9 +47,34 @@
 }
 
 .planet {
-    bottom: 0;
-    left: 50px;
-    transform: translate(-50%, 50%);
-    width: 620px;
+    width: 100%;
+    height: 380px;
     transition: all ease 250ms;
+}
+
+.astronaute {
+    width: 100%;
+    height: 200px;
+    transition: all ease 250ms;
+    position: absolute;
+    user-select: none;
+    transform: translate(-2%, -73%);
+}
+
+.galaxyWrapper {
+    bottom: -170px;
+    left: -30px;
+    max-height: 916px;
+    max-width: 606px;
+    user-select: none;
+    transition: all ease 250ms;
+}
+
+.planetOrange {
+    top: 40%;
+    right: 10%;
+    opacity: .8;
+    max-width: 300px;
+    mix-blend-mode: screen;
+    user-select: none;
 }

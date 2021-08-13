@@ -55,6 +55,7 @@ function About() {
                             classname={
                                 'mt-3' + (isMobile() ? ' me-auto ms-auto' : '')
                             }
+                            isFilled
                         />
                     </Col>
                 </Row>

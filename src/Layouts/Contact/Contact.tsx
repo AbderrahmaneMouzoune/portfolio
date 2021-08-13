@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import {
     Container,
     Row,
@@ -17,153 +17,105 @@ import {
 } from 'reactstrap'
 import imgCard from '../../assets/img/contact_square.module.png'
 import Button from '../../components/Button/Button'
+import styles from './Contact.module.css'
+import Astronaut from '../../assets/img/effect/float_astronaut.module.svg'
+import { Parallax, ParallaxProvider } from 'react-scroll-parallax'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 function Contact() {
-    const [squares1to6, setSquares1to6] = useState('')
-    const [squares7and8, setSquares7and8] = useState('')
-
     const [emailFocus, setEmailFocus] = useState(false)
     const [messageFocus, setMessageFocus] = useState(false)
 
-    useEffect(() => {
-        document.body.classList.toggle('register-page')
-        document.documentElement.addEventListener('mousemove', followCursor)
-        // Specify how to clean up after this effect:
-        return function cleanup() {
-            document.body.classList.toggle('register-page')
-            document.documentElement.removeEventListener(
-                'mousemove',
-                followCursor
-            )
-        }
-    }, [])
-    const followCursor = (event: { clientX: number; clientY: number }) => {
-        const posX = event.clientX - window.innerWidth / 2
-        const posY = event.clientY - window.innerWidth / 6
-        setSquares1to6(
-            'perspective(500px) rotateY(' +
-                posX * 0.05 +
-                'deg) rotateX(' +
-                posY * -0.05 +
-                'deg)'
-        )
-        setSquares7and8(
-            'perspective(500px) rotateY(' +
-                posX * 0.02 +
-                'deg) rotateX(' +
-                posY * -0.02 +
-                'deg)'
-        )
-    }
-
     return (
-        <main id="contact" className={''}>
+        <main id="contact" className={'mt-5'}>
             <Container>
-                <Row>
-                    <Col lg="5" md="6">
-                        <div
-                            className="square square-7"
-                            id="square7"
-                            style={{ transform: squares7and8 }}
-                        />
-                        <div
-                            className="square square-8"
-                            id="square8"
-                            style={{ transform: squares7and8 }}
-                        />
-                        <Card className="card-register">
-                            <CardHeader>
-                                <CardImg alt="..." src={imgCard} />
-                                <CardTitle tag="h4">Register</CardTitle>
+                <Row className={'position-relative justify-content-between'}>
+                    <Col lg="4" md="5">
+                        <Card className={'card-register ' + styles.cardWrapper}>
+                            <CardHeader className={styles.cardHeader}>
+                                <CardImg
+                                    className={styles.img}
+                                    alt="..."
+                                    src={imgCard}
+                                />
+                                <CardTitle className={styles.titleImg} tag="h2">
+                                    Contact
+                                </CardTitle>
                             </CardHeader>
                             <CardBody>
-                                <Form className="form">
+                                <Form className="form d-flex flex-wrap h-100">
                                     <InputGroup
                                         className={
-                                            'input-group' +
+                                            'input-group mb-2' +
                                             (emailFocus
                                                 ? ' input-group-focus'
                                                 : '')
                                         }
                                     >
                                         <InputGroupAddon addonType="prepend">
-                                            <InputGroupText>
-                                                <i className="tim-icons icon-email-85" />
+                                            <InputGroupText
+                                                className={styles.inputPrepend}
+                                            >
+                                                <FontAwesomeIcon
+                                                    icon={faEnvelope}
+                                                />
                                             </InputGroupText>
                                         </InputGroupAddon>
                                         <Input
+                                            className={styles.input}
                                             placeholder="Email"
-                                            type="text"
+                                            type="email"
                                             onFocus={() => setEmailFocus(true)}
                                             onBlur={() => setEmailFocus(false)}
                                         />
                                     </InputGroup>
                                     <InputGroup
                                         className={
-                                            'input-group' +
+                                            'input-group mb-2' +
                                             (messageFocus
                                                 ? ' input-group-focus'
                                                 : '')
                                         }
                                     >
-                                        <InputGroupAddon addonType="prepend">
-                                            <InputGroupText>
-                                                <i className="tim-icons icon-lock-circle" />
-                                            </InputGroupText>
-                                        </InputGroupAddon>
                                         <Input
+                                            className={styles.inputArea}
                                             placeholder="Comment je peux vous aider ?"
-                                            type="text"
+                                            type="textarea"
                                             onFocus={() =>
                                                 setMessageFocus(true)
                                             }
                                             onBlur={() =>
                                                 setMessageFocus(false)
                                             }
+                                            rows={7}
                                         />
                                     </InputGroup>
                                 </Form>
                             </CardBody>
-                            <CardFooter>
+                            <CardFooter className={styles.footer}>
                                 <Button
+                                    isFilled
                                     value={'Envoyer le message'}
                                     link={''}
+                                    classname={'mb-3 ' + styles.btn}
                                 />
                             </CardFooter>
                         </Card>
                     </Col>
+
+                    <ParallaxProvider>
+                        <Col lg="6" md="6">
+                            <Parallax y={[-40, 40]}>
+                                <img
+                                    className={styles.astronaut}
+                                    src={Astronaut}
+                                    alt="Astronaute"
+                                />
+                            </Parallax>
+                        </Col>
+                    </ParallaxProvider>
                 </Row>
-                <div className="register-bg" />
-                <div
-                    className="square square-1"
-                    id="square1"
-                    style={{ transform: squares1to6 }}
-                />
-                <div
-                    className="square square-2"
-                    id="square2"
-                    style={{ transform: squares1to6 }}
-                />
-                <div
-                    className="square square-3"
-                    id="square3"
-                    style={{ transform: squares1to6 }}
-                />
-                <div
-                    className="square square-4"
-                    id="square4"
-                    style={{ transform: squares1to6 }}
-                />
-                <div
-                    className="square square-5"
-                    id="square5"
-                    style={{ transform: squares1to6 }}
-                />
-                <div
-                    className="square square-6"
-                    id="square6"
-                    style={{ transform: squares1to6 }}
-                />
             </Container>
         </main>
     )

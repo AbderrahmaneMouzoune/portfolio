@@ -1,6 +1,6 @@
 .btn {
     display: inline-block;
-    padding: 15px 40px;
+    padding: 13px 18px;
     border: 1px solid var(--primary);
     border-radius: var(--radius);
 
@@ -10,11 +10,32 @@
     text-transform: uppercase;
     text-decoration: none;
 
-    transition: all 150ms ease;
+    transition: all 300ms ease;
 }
 
 .btn:hover {
     background-color: var(--primary);
     text-shadow: var(--text-shadow);
     color: var(--color-font-light);
-}  
+} 
+
+.btnFilled {
+    display: inline-block;
+    padding: 13px 18px;
+    border: 1px solid var(--primary);
+    border-radius: var(--radius);
+
+    background-color: var(--primary);
+    color: var(--color-font-light);
+
+    text-transform: uppercase;
+    text-decoration: none;
+
+    transition: all 300ms ease;
+}
+
+.btnFilled:hover {
+    background-color: transparent;
+    text-shadow: var(--text-shadow);
+    color: var(--color-font-light);
+}
