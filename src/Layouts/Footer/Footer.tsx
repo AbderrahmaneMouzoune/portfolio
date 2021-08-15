@@ -50,11 +50,13 @@ function Footer() {
                 className={'img-fluid ' + styles.asteroid}
                 type="image/svg+xml"
                 data={Asteroid}
+                aria-label={"That's some asteroid"}
             />
             <object
                 className={'pt-5 ' + styles.footerImg}
                 type="image/svg+xml"
                 data={FooterImg}
+                aria-label={'Wee can see Mars'}
             />
         </footer>
     )

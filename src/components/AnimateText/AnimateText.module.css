@@ -1,2 +1,47 @@
 .AnimateText {
+    display: inline-block;
+    transition: all ease 200ms;
+    position: relative;
+    padding: 0 20px;
+}
+
+.arrow {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all ease 200ms;
+}
+
+.right {
+    left: unset;
+    right: 0;
+}
+
+.right::before {
+    content: "/";
+}
+
+.text {
+    display: inline-block;
+    color: var(--color-font-light);
+    font-size: 1.5rem;
+}
+
+.exit {
+    animation: exit ease 1.5s;
+}
+
+@keyframes exit {
+    from { transform: translateY(0) rotateX(0deg); }
+    to { transform: translateY(-100%) rotateX(90deg); }
+}
+
+.enter {
+    animation: enter ease 1.5s;
+}
+
+@keyframes enter {
+    from { transform: translateY(-100%) rotateX(90deg); }
+    to { transform: translateY(0) rotateX(0deg); }
 }

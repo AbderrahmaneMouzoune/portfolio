@@ -67,7 +67,7 @@
     max-height: 916px;
     max-width: 606px;
     user-select: none;
-    transition: all ease 250ms;
+    animation: enter 1s forwards;
 }
 
 .planetOrange {
@@ -77,4 +77,10 @@
     max-width: 300px;
     mix-blend-mode: screen;
     user-select: none;
+    animation: enter 1s forwards;
+}
+
+@keyframes enter {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
 }

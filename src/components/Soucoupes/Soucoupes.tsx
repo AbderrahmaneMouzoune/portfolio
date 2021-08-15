@@ -2,8 +2,6 @@ import style from './Soucoupes.module.css'
 import Soucoupes1 from '../../assets/img/soucoupes/soucoupe_1.module.svg'
 import Soucoupes2 from '../../assets/img/soucoupes/soucoupe_2.module.svg'
 import Soucoupes3 from '../../assets/img/soucoupes/soucoupe_3.module.svg'
-import Soucoupes4 from '../../assets/img/soucoupes/soucoupe_4.module.svg'
-import { useState, useEffect } from 'react'
 
 function Soucoupes() {
     return (

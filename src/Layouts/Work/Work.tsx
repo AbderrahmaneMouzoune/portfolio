@@ -6,7 +6,7 @@ import styles from './Work.module.css'
 import { Container, Row } from 'reactstrap'
 import { isMobile } from 'is-mobile'
 import CirclePlanet from '../../assets/img/circle/circle_with_planet.module.svg'
-import { ParallaxProvider } from 'react-scroll-parallax'
+import { Parallax, ParallaxProvider } from 'react-scroll-parallax'
 
 export default function Portfolio() {
     const [actualTag, setActualTag] = useState('')
@@ -43,18 +43,22 @@ export default function Portfolio() {
 
                 <Row className={'mt-5 position-relative'}>
                     {/* Display work with actual tag */}
-                    {filterWorks(Works).map((work, i) => (
+                    {filterWorks(Works).map(({ name, url, tags }, i) => (
                         <WorkItem
                             key={i}
-                            name={work.name}
-                            url={work.url}
-                            tags={work.tags}
+                            name={name}
+                            url={url}
+                            tags={tags}
                             cN={i > 2 || (isMobile() && i > 0) ? 'mt-4' : ''}
                         />
                     ))}
-
-                    <img className={styles.planet} src={CirclePlanet} alt="système astral" />
                 </Row>
+
+                <img
+                    className={styles.planet}
+                    src={CirclePlanet}
+                    alt="système astral"
+                />
             </Container>
         </main>
     )

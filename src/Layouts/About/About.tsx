@@ -3,6 +3,7 @@ import styles from './About.module.css'
 import AbderrahmaneMouzoune from '../../assets/img/abderrahmane_mouzoune.module.png'
 import { Col, Container, Row } from 'reactstrap'
 import isMobile from 'is-mobile'
+import AnimateText from '../../components/AnimateText/AnimateText'
 
 function About() {
     return (
@@ -43,22 +44,27 @@ function About() {
                             </p>
                         </div>
 
-                        <div>
-                            <span className={'color-secondary'}>&lt;</span>
-                            Apprendre
-                            <span className={'color-secondary'}>/&gt;</span>
-                        </div>
+                                <div>
+                                    <AnimateText
+                                        values={[
+                                            'Apprendre',
+                                            'Créer',
+                                            'Innover',
+                                        ]}
+                                    />
+                                </div>
 
-                        <Button
-                            value={'Télécharger mon cv'}
-                            link={'#cv'}
-                            classname={
-                                'mt-3' + (isMobile() ? ' me-auto ms-auto' : '')
-                            }
-                            isFilled
-                        />
-                    </Col>
-                </Row>
+                                <Button
+                                    value={'Télécharger mon cv'}
+                                    link={'#cv'}
+                                    classname={
+                                        'mt-3' +
+                                        (isMobile() ? ' me-auto ms-auto' : '')
+                                    }
+                                    isFilled
+                                />
+                            </Col>
+                        </Row>
             </Container>
         </main>
     )

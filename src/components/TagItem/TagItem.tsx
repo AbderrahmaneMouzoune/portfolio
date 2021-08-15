@@ -5,9 +5,10 @@ interface ITagItem {
     name: Tag
     isActive: boolean
     onClick?: React.MouseEventHandler<HTMLDivElement> | undefined
+    onKeyDown?: React.KeyboardEventHandler<HTMLDivElement> | undefined
 }
 
-function TagItem({ name, isActive, onClick }: ITagItem) {
+function TagItem({ name, isActive, onClick, onKeyDown }: ITagItem) {
     return (
         <div
             role="button"
@@ -16,6 +17,8 @@ function TagItem({ name, isActive, onClick }: ITagItem) {
                 (isActive ? styles.itemActive : styles.item)
             }
             onClick={onClick}
+            onKeyDown={onKeyDown}
+            tabIndex={0}
         >
             {name}
         </div>

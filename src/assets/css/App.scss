@@ -27,6 +27,7 @@ body {
     background: -moz-radial-gradient(circle, rgba(74, 40, 156, 1) 0%, rgba(0, 9, 43, 1) 100%);
     background: -webkit-radial-gradient(circle, rgba(74, 40, 156, 1) 0%, rgba(0, 9, 43, 1) 100%);
     background: radial-gradient(circle, rgba(74, 40, 156, 1) 0%, rgba(0, 9, 43, 1) 100%);
+    background-attachment: fixed;
 
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4a289c", endColorstr="#00092b", GradientType=1);
 
@@ -43,8 +44,11 @@ body::before {
     left: 0;
 
     background: transparent url(../../assets/img/effect/body_space.svg) padding-box;
+    background-attachment: fixed;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
+
     mix-blend-mode: soft-light;
     pointer-events: none;
     z-index: -1;
@@ -134,4 +138,10 @@ h6 {
 
 img {
     user-select: none !important;
+}
+
+::selection {
+    background-color: var(--primary);
+    color: var(--color-font-light);
+    text-shadow: var(--text-shadow);
 }
