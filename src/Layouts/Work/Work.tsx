@@ -5,8 +5,9 @@ import TagItem from '../../components/TagItem/TagItem'
 import styles from './Work.module.css'
 import { Container, Row } from 'reactstrap'
 import { isMobile } from 'is-mobile'
-import CirclePlanet from '../../assets/img/circle/circle_with_planet.module.svg'
-import { Parallax, ParallaxProvider } from 'react-scroll-parallax'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import Planet from '../../assets/img/planets/planete_3.module.svg'
+import PlanetBig from '../../assets/img/planets/planete_11.module.svg'
 
 export default function Portfolio() {
     const [actualTag, setActualTag] = useState('')
@@ -53,13 +54,19 @@ export default function Portfolio() {
                         />
                     ))}
                 </Row>
-
-                <img
-                    className={styles.planet}
-                    src={CirclePlanet}
-                    alt="système astral"
-                />
             </Container>
+
+            <LazyLoadImage
+                className={styles.planet}
+                src={Planet}
+                alt={'An awesome planet'}
+            />
+
+            <LazyLoadImage
+                className={styles.planetBig}
+                src={PlanetBig}
+                alt={'An awesome planet'}
+            />
         </main>
     )
 }

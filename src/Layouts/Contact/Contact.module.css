@@ -7,7 +7,7 @@
     overflow: hidden;
     text-align: left;
     z-index: 2;
-    height: 440px;
+    height: 360px;
 }
 
 .inputPrepend {
@@ -27,7 +27,7 @@
 .img {
     position: absolute;
     left: -160px;
-    top: -47%;
+    top: -57%;
     margin-left: -50px !important;
     margin-top: -150px;
     border-radius: 20% !important;
@@ -105,4 +105,13 @@
 	100% {
 		transform: rotate(0deg);
 	}
+}
+
+.planete {
+    position: absolute;
+    bottom: -40%;
+    left: 5%;
+    height: 200px;
+    transform: rotate(-32deg);
+    transition: all ease 300ms;
 }

@@ -1,34 +1,12 @@
 .main {
     position: relative;
-    z-index: 1;
-
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     align-content: center;
     height: 100vh;
-    flex-wrap: wrap;
-}
-
-.main::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    /* background: transparent url(../../assets/img/effect/first_effect.svg) no-repeat padding-box;
-    background-position: center;
-    background-size: cover;
-    mix-blend-mode: exclusion; */
-
-    opacity: .8;
-    pointer-events: none;
-}
-
-.main * {
-    z-index: 1;
+    perspective: 500px;
 }
 
 .aboutWrapper {
@@ -40,18 +18,19 @@
 }
 
 .img {
-    transform: matrix(1, 0.07, -0.07, 1, 0, 0);
     width: 100%;
     height: 100%;
     border-radius: calc(var(--radius) + 5px);
-    transition: all ease 300ms;
+    transform: matrix(1, 0.07, -0.07, 1, 0, 0);
+    transform-style: preserve-3d;
+    transform-origin: center;
     object-fit: cover;
+    z-index: 1;
 }
 
 .imgWrapper {
     position: relative;
-    width: 370px !important;
-    height: 470px;
+    height: 280px;
 }
 
 .imgWrapper::before {
@@ -62,8 +41,53 @@
     width: calc(100% - (var(--bs-gutter-x) * .5));
     height: 100%;
     border-radius: calc(var(--radius) + 5px);
-    transform: matrix(1, -0.07, 0.07, 1, 0, 0);
+    transform: matrix3d(
+        1, -0.07, 0,
+        0, 0.07, 1, 
+        0, 0, 0, 
+        0, 1, 0, 
+        0, 0, 0, 1);
+    transform-style: preserve-3d;
     background: transparent linear-gradient(141deg, #DF6A54 0%, #DE007B 100%) 0% 0% no-repeat padding-box;
+    z-index: -1;
+}
 
+.planet {
+    position: absolute;
+    height: 150px;
+    z-index: -1;
+    top: 13px;
+    right: 13px;
+}
+
+.planetBis {
+    position: absolute;
+    height: 75px;
+    bottom: -3%;
+    left: -20%;
     transition: all ease 300ms;
+    z-index: 3;
+}
+
+.planetBlue {
+    position: absolute;
+    height: 75px;
+    bottom: -10%;
+    left: 20%;
+    transition: all ease 300ms;
+    z-index: -1;
+}
+
+@media screen and (min-width: 720px) {
+    .planet {
+        height: 250px;
+    }
+
+    .planetBis {
+        height: 140px;
+    }
+
+    .imgWrapper {
+        height: 470px;
+    }
 }

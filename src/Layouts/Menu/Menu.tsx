@@ -2,7 +2,7 @@ import styles from './Menu.module.css'
 
 import { Container, Row, Col } from 'reactstrap'
 import MenuLink from '../../components/MenuLink/MenuLink'
-import Fade from 'react-reveal/Fade'
+import isMobile from 'is-mobile'
 
 function Menu() {
     return (
@@ -10,30 +10,36 @@ function Menu() {
             <Container>
                 <Row className={'flex-nowrap'}>
                     <Col>
-                        <Fade top>
-                            <span className="text-uppercase">Abderrahmane</span>
-                        </Fade>
+                        <span className="text-uppercase">Abderrahmane</span>
                     </Col>
 
-                    <Col className={'d-flex justify-content-end'}>
-                        <Fade top>
+                    {isMobile() ? (
+                        <>
+                            <Col>
+                                <MenuLink label={'About'} link={'#about'} />
+                            </Col>
+                            <Col>
+                                <MenuLink label={'Contact'} link={'#contact'} />
+                            </Col>
+                            <Col>
+                                <MenuLink label={'Works'} link={'#works'} />
+                            </Col>
+                        </>
+                    ) : (
+                        <Col className={'d-flex justify-content-end'}>
                             <MenuLink
                                 label={'About'}
                                 link={'#about'}
                                 cN={'me-5'}
                             />
-                        </Fade>
-                        <Fade top>
                             <MenuLink
                                 label={'Works'}
                                 link={'#works'}
                                 cN={'me-5'}
                             />
-                        </Fade>
-                        <Fade top>
                             <MenuLink label={'Contact'} link={'#contact'} />
-                        </Fade>
-                    </Col>
+                        </Col>
+                    )}
                 </Row>
             </Container>
         </header>

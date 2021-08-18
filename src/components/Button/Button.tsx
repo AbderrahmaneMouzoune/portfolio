@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import styles from './Button.module.css'
 
 interface IButton {
@@ -9,7 +10,9 @@ interface IButton {
 
 function Button({ value, link, isFilled, classname }: IButton) {
     return (
-        <a
+        <motion.a
+            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.05 }}
             className={
                 (isFilled ? styles.btnFilled : styles.btn) +
                 ' ' +
@@ -18,7 +21,7 @@ function Button({ value, link, isFilled, classname }: IButton) {
             href={link}
         >
             {value}
-        </a>
+        </motion.a>
     )
 }
 

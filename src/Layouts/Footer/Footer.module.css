@@ -5,12 +5,10 @@
 }
 
 .asteroid {
-    position: absolute;
     margin: 0 auto;
     pointer-events: none;
     z-index: -1;
     user-select: none;
-    top: 0;
 }
 
 .footerImg {

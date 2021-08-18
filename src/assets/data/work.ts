@@ -10,8 +10,8 @@ export interface Work {
 
 export const Works = [
     {
-        name: 'Work 1',
-        url: 'http://localhost:8080',
+        name: 'Mon Agenda Ludique',
+        url: 'https://mon-agenda-ludique.fr/fr/index.php',
         tags: [TAGS[0], TAGS[3]],
     },
     {

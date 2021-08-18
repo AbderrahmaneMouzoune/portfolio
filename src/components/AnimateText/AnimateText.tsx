@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import styles from './AnimateText.module.css'
 import ReactTypingEffect from 'react-typing-effect'
 

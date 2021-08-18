@@ -6,6 +6,8 @@ import MenuLink from '../../components/MenuLink/MenuLink'
 import IconLink from '../../components/IconLink/IconLink'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import isMobile from 'is-mobile'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 function Footer() {
     return (
@@ -46,17 +48,16 @@ function Footer() {
                     </Col>
                 </Row>
             </Container>
-            <object
+
+            <LazyLoadImage
+                src={Asteroid}
+                alt={"That's some asteroid"}
                 className={'img-fluid ' + styles.asteroid}
-                type="image/svg+xml"
-                data={Asteroid}
-                aria-label={"That's some asteroid"}
             />
-            <object
+            <LazyLoadImage
+                src={FooterImg}
+                alt={'Wee can see Mars'}
                 className={'pt-5 ' + styles.footerImg}
-                type="image/svg+xml"
-                data={FooterImg}
-                aria-label={'Wee can see Mars'}
             />
         </footer>
     )

@@ -5,10 +5,23 @@
     cursor: pointer;
     padding-top: 37.5%;
     padding-bottom: 37.5%;
-    transition: all ease 0.2s;
+    position: relative;
+    opacity: 0;
 }
 
-.item:hover {
+.item::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transition: all ease 300ms;
+    opacity: 0;
+}
+
+.item:hover::before {
+    transition: all ease 300ms;
     background-color: var(--secondary);
+    opacity: .6;
     color: white;
 }

@@ -18,9 +18,29 @@
 }
 
 .planet {
-    width: 40% !important;
     position: absolute;
-    bottom: -20%;
-    left: -20%;
-    mix-blend-mode: exclusion;
+    top: -10px;
+    left: 13px;
+    height: 100px;
+    z-index: -1;
+    transition: all ease 300ms;
+}
+
+.planetBig {
+    position: absolute;
+    height: 75px;
+    right: 7%;
+    top: 7%;
+    transition: all ease 300ms;
+    z-index: -1;
+}
+
+@media screen and (min-width: 720px) {
+    .planetBig {
+        height: 200px;
+    }
+
+    .planet {
+        height: 200px;
+    }
 }

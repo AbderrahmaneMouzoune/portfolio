@@ -10,7 +10,6 @@ import {
     CardTitle,
     Form,
     InputGroup,
-    CardFooter,
     Input,
     InputGroupAddon,
     InputGroupText,
@@ -19,19 +18,21 @@ import imgCard from '../../assets/img/contact_square.module.png'
 import Button from '../../components/Button/Button'
 import styles from './Contact.module.css'
 import Astronaut from '../../assets/img/effect/float_astronaut.module.svg'
+import Planete from '../../assets/img/planets/planete_9.module.svg'
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 function Contact() {
     const [emailFocus, setEmailFocus] = useState(false)
     const [messageFocus, setMessageFocus] = useState(false)
 
     return (
-        <main id="contact" className={'mt-5'}>
+        <main id="contact" className={'mt-5 position-relative'}>
             <Container>
-                <Row className={'position-relative justify-content-between'}>
-                    <Col lg="4" md="5">
+                <Row className={'position-relative justify-content-center'}>
+                    <Col lg={4} md={5}>
                         <Card className={'card-register ' + styles.cardWrapper}>
                             <CardHeader className={styles.cardHeader}>
                                 <CardImg
@@ -44,7 +45,11 @@ function Contact() {
                                 </CardTitle>
                             </CardHeader>
                             <CardBody>
-                                <Form className="form d-flex flex-wrap h-100">
+                                <Form
+                                    className={
+                                        'form d-flex flex-wrap h-100 align-content-start'
+                                    }
+                                >
                                     <InputGroup
                                         className={
                                             'input-group mb-2' +
@@ -91,32 +96,37 @@ function Contact() {
                                             rows={7}
                                         />
                                     </InputGroup>
+
+                                    <Button
+                                        isFilled
+                                        value={'Envoyer le message'}
+                                        link={''}
+                                        classname={'mt-3 ' + styles.btn}
+                                    />
                                 </Form>
                             </CardBody>
-                            <CardFooter className={styles.footer}>
-                                <Button
-                                    isFilled
-                                    value={'Envoyer le message'}
-                                    link={''}
-                                    classname={'mb-3 ' + styles.btn}
-                                />
-                            </CardFooter>
                         </Card>
                     </Col>
 
-                    <ParallaxProvider>
-                        <Col lg="6" md="6">
+                    <Col md={5} lg={5} sm={12}>
+                        <ParallaxProvider>
                             <Parallax y={[-40, 40]}>
-                                <img
+                                <LazyLoadImage
                                     className={styles.astronaut}
                                     src={Astronaut}
                                     alt="Astronaute"
                                 />
                             </Parallax>
-                        </Col>
-                    </ParallaxProvider>
+                        </ParallaxProvider>
+                    </Col>
                 </Row>
             </Container>
+
+            <LazyLoadImage
+                className={styles.planete}
+                src={Planete}
+                alt="Another awesome planete"
+            />
         </main>
     )
 }
