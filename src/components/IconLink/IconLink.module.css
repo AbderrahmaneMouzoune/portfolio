@@ -1,12 +1,15 @@
 .link {
     color: var(--color-font);
-    border-radius: var(--radius);
     font-size: 1.7em;
     transition: all ease 300ms;
+    padding: 0 6px;
+    height: fit-content;
+    border-radius: 2px;
 }
 
 .link:hover {
     color: var(--color-font-light);
     text-shadow: var(--text-shadow);
+    background-color: var(--primary);
     transition: all ease 150ms;
 }

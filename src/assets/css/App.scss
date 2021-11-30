@@ -84,6 +84,7 @@ img {
     background-color: var(--primary);
     color: var(--color-font-light);
     text-shadow: var(--text-shadow);
+    transition: all ease 300ms;
 }
 
 ::-webkit-scrollbar {

@@ -17,9 +17,9 @@ function AnimateText({ values }: IAnimateText) {
             </span>
             {
                 <ReactTypingEffect
-                    typingDelay={1000}
-                    eraseSpeed={250}
-                    eraseDelay={1000}
+                    typingDelay={500}
+                    eraseSpeed={120}
+                    eraseDelay={300}
                     className={styles.text}
                     text={values}
                 />

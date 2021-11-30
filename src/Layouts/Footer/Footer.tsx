@@ -2,7 +2,6 @@ import styles from './Footer.module.css'
 import FooterImg from '../../assets/img/footer.module.svg'
 import Asteroid from '../../assets/img/float_asteroid.module.svg'
 import { Col, Container, Row } from 'reactstrap'
-import MenuLink from '../../components/MenuLink/MenuLink'
 import IconLink from '../../components/IconLink/IconLink'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import isMobile from 'is-mobile'
@@ -11,29 +10,10 @@ import 'react-lazy-load-image-component/src/effects/blur.css'
 
 function Footer() {
     return (
-        <footer className={'w-100 container-fluid mt-5 ' + styles.main}>
+        <footer className={'w-100 container-fluid p-0 mt-5 ' + styles.main}>
             <Container tag={'nav'}>
-                <Row className={'flex-nowrap'}>
-                    <Col>
-                        <MenuLink
-                            label={'Abderrahmane'}
-                            link={'#hero'}
-                            cN={'me-5'}
-                        />
-                        <MenuLink
-                            label={'About'}
-                            link={'#about'}
-                            cN={isMobile() ? '' : 'me-5'}
-                        />
-                        <MenuLink
-                            label={'Works'}
-                            link={'#works'}
-                            cN={isMobile() ? '' : 'me-5'}
-                        />
-                        <MenuLink label={'Contact'} link={'#contact'} />
-                    </Col>
-
-                    <Col className={'d-flex justify-content-end'}>
+                <Row className={'justify-content-center'}>
+                    <Col className={styles.col}>
                         <IconLink
                             icon={faGithub}
                             link={'https://github.com/AbderrahmaneMouzoune'}
@@ -46,13 +26,25 @@ function Footer() {
                             }
                         />
                     </Col>
+                    <Col
+                        className={
+                            'd-flex align-items-center justify-content-center'
+                        }
+                    >
+                        <a
+                            className={'text-uppercase ' + styles.link}
+                            href="mailto:abderrahmane.mouzoune.dev@gmail.com"
+                        >
+                            abderrahmane.mouzoune.dev@gmail.com
+                        </a>
+                    </Col>
                 </Row>
             </Container>
 
             <LazyLoadImage
                 src={Asteroid}
                 alt={"That's some asteroid"}
-                className={'img-fluid ' + styles.asteroid}
+                className={'img-fluid position-absolute ' + styles.asteroid}
             />
             <LazyLoadImage
                 src={FooterImg}

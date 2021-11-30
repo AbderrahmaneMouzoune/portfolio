@@ -1,7 +1,6 @@
 .main {
     position: relative;
     z-index: 1;
-    padding: 100px 0 0 0 !important;
 }
 
 .asteroid {
@@ -9,8 +8,24 @@
     pointer-events: none;
     z-index: -1;
     user-select: none;
+    top: 0;
 }
 
-.footerImg {
+.col {
+    max-width: fit-content !important;
+    width: fit-content !important;
+}
 
+.link {
+    color: var(--color-font-light);
+    transition: all ease 300ms;
+    text-transform: none !important;
+    padding: 8px;
+    border-radius: 2px;
+}
+
+.link:hover {
+    color: var(--color-font-light);
+    text-shadow: var(--text-shadow);
+    background-color: var(--primary);
 }

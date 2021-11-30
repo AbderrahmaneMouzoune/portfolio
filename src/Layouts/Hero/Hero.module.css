@@ -23,6 +23,7 @@
 
 .subtitle {
     text-transform: uppercase;
+    text-align: center;
 }
 
 .btnWrapper {
@@ -34,7 +35,8 @@
 .galaxyWrapper {
     user-select: none;
     bottom: 0;
-    left: -30%;
+    left: 0;
+    will-change: transform;
 }
 
 .planet {
@@ -50,6 +52,7 @@
     left: 50%;
     transform: translate(-60%, -80%);
     transition: all ease 300ms;
+    will-change: transform, scroll-position;
 }
 
 .planetOrange {
@@ -58,6 +61,7 @@
     height: 76px;
     user-select: none;
     transition: all ease 300ms;
+    will-change: transform, scroll-position;
 }
 
 
@@ -75,7 +79,6 @@
     }
 
     .galaxyWrapper {
-        bottom: -170px;
-        left: -30px;
+        left: 0;
     }
 }

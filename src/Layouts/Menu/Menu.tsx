@@ -3,14 +3,22 @@ import styles from './Menu.module.css'
 import { Container, Row, Col } from 'reactstrap'
 import MenuLink from '../../components/MenuLink/MenuLink'
 import isMobile from 'is-mobile'
+import Anagram from '../../assets/img/icon/favicon.module.svg'
 
 function Menu() {
     return (
-        <header id="menu" className={'p-5 ' + styles.header}>
+        <header
+            id="menu"
+            className={`${isMobile() ? 'p-3' : 'p-5'} ` + styles.header}
+        >
             <Container>
                 <Row className={'flex-nowrap'}>
                     <Col>
-                        <span className="text-uppercase">Abderrahmane</span>
+                        <img
+                            className={styles.icon}
+                            src={Anagram}
+                            alt={'Anagramme Abderrahmane MOUZOUNE'}
+                        />
                     </Col>
 
                     {isMobile() ? (

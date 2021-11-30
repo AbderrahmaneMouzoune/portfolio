@@ -1,5 +1,5 @@
 import { Works, TAGS, Tag, Work } from '../../assets/data/work'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import WorkItem from '../../components/WorkItem/WorkItem'
 import TagItem from '../../components/TagItem/TagItem'
 import styles from './Work.module.css'
@@ -8,6 +8,7 @@ import { isMobile } from 'is-mobile'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import Planet from '../../assets/img/planets/planete_3.module.svg'
 import PlanetBig from '../../assets/img/planets/planete_11.module.svg'
+import { motion, AnimateSharedLayout } from 'framer-motion'
 
 export default function Portfolio() {
     const [actualTag, setActualTag] = useState('')
@@ -19,8 +20,28 @@ export default function Portfolio() {
             (work) => work.tags.includes(actualTag) || actualTag === ''
         )
 
+    const [y, setY] = useState(0)
+
+    useEffect(() => {
+        window.addEventListener('scroll', () =>
+            setY(
+                document.getElementById('works')?.getBoundingClientRect()
+                    ?.top || 0
+            )
+        )
+
+        return () => {
+            window.removeEventListener('scroll', () =>
+                setY(
+                    document.getElementById('works')?.getBoundingClientRect()
+                        ?.top || 0
+                )
+            )
+        }
+    }, [])
+
     return (
-        <main id="works" className={styles.main}>
+        <motion.main id="works" className={styles.main}>
             <Container>
                 <h2 className={styles.title + ' pb-5'}>Works</h2>
                 <Row className={'justify-content-center'}>
@@ -42,31 +63,39 @@ export default function Portfolio() {
                     ))}
                 </Row>
 
-                <Row className={'mt-5 position-relative'}>
-                    {/* Display work with actual tag */}
-                    {filterWorks(Works).map(({ name, url, tags }, i) => (
-                        <WorkItem
-                            key={i}
-                            name={name}
-                            url={url}
-                            tags={tags}
-                            cN={i > 2 || (isMobile() && i > 0) ? 'mt-4' : ''}
-                        />
-                    ))}
-                </Row>
+                <AnimateSharedLayout>
+                    <motion.div className={'row mt-5 position-relative'}>
+                        {/* Display work with actual tag */}
+                        {filterWorks(Works).map((work, i) => (
+                            <motion.div
+                                key={i}
+                                className={
+                                    'col-sm-6 col-md-4' +
+                                    (i > 2 || (isMobile() && i > 0)
+                                        ? ' mt-4'
+                                        : '')
+                                }
+                            >
+                                <WorkItem {...work} />
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                </AnimateSharedLayout>
             </Container>
 
             <LazyLoadImage
                 className={styles.planet}
                 src={Planet}
                 alt={'An awesome planet'}
+                style={{ transform: `translateY(${y * 0.05}px)` }}
             />
 
             <LazyLoadImage
                 className={styles.planetBig}
                 src={PlanetBig}
                 alt={'An awesome planet'}
+                style={{ transform: `translateY(-${y * 0.05}px)` }}
             />
-        </main>
+        </motion.main>
     )
 }
