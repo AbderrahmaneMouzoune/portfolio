@@ -64,7 +64,6 @@
     will-change: transform, scroll-position;
 }
 
-
 @media screen and (min-width: 720px) {
     .planetOrange {
         height: 125px;

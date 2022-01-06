@@ -5,7 +5,7 @@
     border: 1px solid var(--primary);
     transition: all ease 0.2s;
     cursor: pointer;
-    font-size: .825rem;
+    font-size: 0.825rem;
 }
 
 .item.active,
@@ -22,5 +22,5 @@
     cursor: pointer;
     background-color: var(--primary);
     color: var(--color-font-light);
-    font-size: .825rem;
+    font-size: 0.825rem;
 }

@@ -49,17 +49,13 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: calc(100% - (var(--bs-gutter-x) * .5));
+    width: calc(100% - (var(--bs-gutter-x) * 0.5));
     height: 100%;
     border-radius: calc(var(--radius) + 5px);
-    transform: matrix3d(
-        1, -0.07, 0,
-        0, 0.07, 1, 
-        0, 0, 0, 
-        0, 1, 0, 
-        0, 0, 0, 1);
+    transform: matrix3d(1, -0.07, 0, 0, 0.07, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
     transform-style: preserve-3d;
-    background: transparent linear-gradient(141deg, #DF6A54 0%, #DE007B 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(141deg, #df6a54 0%, #de007b 100%) 0%
+        0% no-repeat padding-box;
     z-index: -1;
     transition: all ease 300ms;
 }

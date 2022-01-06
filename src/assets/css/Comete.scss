@@ -8,7 +8,9 @@
     animation: flyComete 100s infinite;
 }
 
-
 @keyframes flyComete {
-    to { top: -100%; right: 100%; }
+    to {
+        top: -100%;
+        right: 100%;
+    }
 }

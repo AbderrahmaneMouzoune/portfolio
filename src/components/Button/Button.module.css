@@ -17,7 +17,7 @@
     background-color: var(--primary);
     text-shadow: var(--text-shadow);
     color: var(--color-font-light);
-} 
+}
 
 .btnFilled {
     display: inline-block;
