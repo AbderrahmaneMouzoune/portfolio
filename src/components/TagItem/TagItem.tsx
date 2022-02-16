@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion'
-import { Tag } from '../../assets/data/work'
-import styles from './TagItem.module.css'
+import { motion } from "framer-motion"
+import { Tag } from "../../assets/data/work"
+import styles from "./TagItem.module.css"
 
 interface ITagItem {
     name: Tag
@@ -15,11 +15,11 @@ function TagItem({ name, isActive, onClick }: ITagItem) {
             whileHover={{ scale: isActive ? 1 : 1.05 }}
             role="button"
             className={
-                'me-2 mb-2 text-uppercase ' +
+                "me-2 mb-2 text-uppercase " +
                 (isActive ? styles.itemActive : styles.item)
             }
             onClick={onClick}
-            onKeyPress={(e) => (e.key === 'Enter' ? onClick : null)}
+            onKeyPress={(e) => (e.key === "Enter" ? onClick : null)}
             tabIndex={0}
         >
             {name}

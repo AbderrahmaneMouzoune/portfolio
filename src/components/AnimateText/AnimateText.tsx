@@ -1,5 +1,5 @@
-import styles from './AnimateText.module.css'
-import ReactTypingEffect from 'react-typing-effect'
+import styles from "./AnimateText.module.css"
+import ReactTypingEffect from "react-typing-effect"
 
 interface IAnimateText {
     values: string[]
@@ -10,7 +10,7 @@ function AnimateText({ values }: IAnimateText) {
         <div className={styles.AnimateText}>
             <span
                 className={
-                    'color-secondary ' + styles.arrow + ' ' + styles.left
+                    "color-secondary " + styles.arrow + " " + styles.left
                 }
             >
                 &lt;
@@ -26,7 +26,7 @@ function AnimateText({ values }: IAnimateText) {
             }
             <span
                 className={
-                    'color-secondary ' + styles.arrow + ' ' + styles.right
+                    "color-secondary " + styles.arrow + " " + styles.right
                 }
             >
                 &gt;

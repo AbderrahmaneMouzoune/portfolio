@@ -1,8 +1,8 @@
 {
-  "name": "starter-pack-project",
+  "name": "abderrahmane-portfolio",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/index.tsx",
   "scripts": {
     "start": "webpack serve --config webpack/webpack.config.js --env env=dev",
     "build": "webpack --config webpack/webpack.config.js --env env=prod",
@@ -12,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AbderrahmaneMouzoune/starter-pack-project.git"
+    "url": "git+https://github.com/AbderrahmaneMouzoune/portfolio.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Abderrahmane Mouzoune",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AbderrahmaneMouzoune/starter-pack-project/issues"
+    "url": "https://github.com/AbderrahmaneMouzoune/portfolio/issues"
   },
-  "homepage": "https://github.com/AbderrahmaneMouzoune/starter-pack-project#readme",
+  "homepage": "https://github.com/AbderrahmaneMouzoune/portfolio#readme",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",

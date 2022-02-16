@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
-import { Work } from '../../assets/data/work'
-import styles from './WorkItem.module.css'
+import { motion } from "framer-motion"
+import { LazyLoadImage } from "react-lazy-load-image-component"
+import { Work } from "../../assets/data/work"
+import styles from "./WorkItem.module.css"
 
 interface IWork extends Work {
     cN?: string
@@ -15,7 +15,7 @@ function WorkItem({ name, url, tags, img, cN }: IWork) {
             whileTap={{ scale: 0.9 }}
             className={
                 styles.item +
-                ' d-flex justify-content-center align-items-center' +
+                " d-flex justify-content-center align-items-center" +
                 cN
             }
             data-name={name}
@@ -24,10 +24,10 @@ function WorkItem({ name, url, tags, img, cN }: IWork) {
         >
             <LazyLoadImage
                 alt={name}
-                height={'100%'}
-                width={'100%'}
+                height={"100%"}
+                width={"100%"}
                 src={img}
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: "cover" }}
             />
             <figcaption>{name}</figcaption>
         </motion.figure>

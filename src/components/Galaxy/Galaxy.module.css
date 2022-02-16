@@ -271,7 +271,7 @@
 
 .stars:before,
 .stars:after {
-    content: '';
+    content: "";
     position: absolute;
     width: inherit;
     height: inherit;

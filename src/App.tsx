@@ -1,11 +1,11 @@
-import About from './Layouts/About/About'
-import Hero from './Layouts/Hero/Hero'
-import Work from './Layouts/Work/Work'
-import Menu from './Layouts/Menu/Menu'
-import Footer from './Layouts/Footer/Footer'
-import './assets/css/App.scss'
-import './assets/css/Comete.scss'
-import Galaxy from './components/Galaxy/Galaxy'
+import About from "./Layouts/About/About"
+import Hero from "./Layouts/Hero/Hero"
+import Work from "./Layouts/Work/Work"
+import Menu from "./Layouts/Menu/Menu"
+import Footer from "./Layouts/Footer/Footer"
+import "./assets/css/App.scss"
+import "./assets/css/Comete.scss"
+import Galaxy from "./Components/Galaxy/Galaxy"
 
 function App() {
     return (

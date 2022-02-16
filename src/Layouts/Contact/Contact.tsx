@@ -1,26 +1,26 @@
-import { useEffect, useState } from 'react'
-import { Container, Row, Col } from 'reactstrap'
-import styles from './Contact.module.css'
-import Astronaut from '../../assets/img/effect/float_astronaut.module.svg'
-import Planete from '../../assets/img/planets/planete_9.module.svg'
-import { Parallax, ParallaxProvider } from 'react-scroll-parallax'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
+import { useEffect, useState } from "react"
+import { Container, Row, Col } from "reactstrap"
+import styles from "./Contact.module.css"
+import Astronaut from "../../assets/img/effect/float_astronaut.module.svg"
+import Planete from "../../assets/img/planets/planete_9.module.svg"
+import { Parallax, ParallaxProvider } from "react-scroll-parallax"
+import { LazyLoadImage } from "react-lazy-load-image-component"
 
 function Contact() {
     const [y, setY] = useState(0)
 
     useEffect(() => {
-        window.addEventListener('scroll', () =>
+        window.addEventListener("scroll", () =>
             setY(
-                document.getElementById('contact')?.getBoundingClientRect()
+                document.getElementById("contact")?.getBoundingClientRect()
                     ?.top || 0
             )
         )
 
         return () => {
-            window.removeEventListener('scroll', () =>
+            window.removeEventListener("scroll", () =>
                 setY(
-                    document.getElementById('contact')?.getBoundingClientRect()
+                    document.getElementById("contact")?.getBoundingClientRect()
                         ?.top || 0
                 )
             )
@@ -28,11 +28,11 @@ function Contact() {
     }, [])
 
     return (
-        <main id="contact" className={'mt-5 position-relative'}>
+        <main id="contact" className={"mt-5 position-relative"}>
             <Container
                 style={{ transform: `translateY(${(y * 0.05) % 100}px)` }}
             >
-                <Row className={'position-relative justify-content-center'}>
+                <Row className={"position-relative justify-content-center"}>
                     {/* <Col>
                     <h3 className={'text-uppercase'}>Contact</h3>
                         <h6 className={'text-uppercase'}>

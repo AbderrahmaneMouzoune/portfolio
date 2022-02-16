@@ -1,51 +1,51 @@
-import styles from './Menu.module.css'
+import styles from "./Menu.module.css"
 
-import { Container, Row, Col } from 'reactstrap'
-import MenuLink from '../../components/MenuLink/MenuLink'
-import isMobile from 'is-mobile'
-import Anagram from '../../assets/img/icon/favicon.module.svg'
+import { Container, Row, Col } from "reactstrap"
+import MenuLink from "../../Components/MenuLink/MenuLink"
+import isMobile from "is-mobile"
+import Anagram from "../../assets/img/icon/favicon.module.svg"
 
 function Menu() {
     return (
         <header
             id="menu"
-            className={`${isMobile() ? 'p-3' : 'p-5'} ` + styles.header}
+            className={`${isMobile() ? "p-3" : "p-5"} ` + styles.header}
         >
             <Container>
-                <Row className={'flex-nowrap'}>
+                <Row className={"flex-nowrap"}>
                     <Col>
                         <img
                             className={styles.icon}
                             src={Anagram}
-                            alt={'Anagramme Abderrahmane MOUZOUNE'}
+                            alt={"Anagramme Abderrahmane MOUZOUNE"}
                         />
                     </Col>
 
                     {isMobile() ? (
                         <>
                             <Col>
-                                <MenuLink label={'About'} link={'#about'} />
+                                <MenuLink label={"About"} link={"#about"} />
                             </Col>
                             <Col>
-                                <MenuLink label={'Contact'} link={'#contact'} />
+                                <MenuLink label={"Contact"} link={"#contact"} />
                             </Col>
                             <Col>
-                                <MenuLink label={'Works'} link={'#works'} />
+                                <MenuLink label={"Works"} link={"#works"} />
                             </Col>
                         </>
                     ) : (
-                        <Col className={'d-flex justify-content-end'}>
+                        <Col className={"d-flex justify-content-end"}>
                             <MenuLink
-                                label={'About'}
-                                link={'#about'}
-                                cN={'me-5'}
+                                label={"About"}
+                                link={"#about"}
+                                cN={"me-5"}
                             />
                             <MenuLink
-                                label={'Works'}
-                                link={'#works'}
-                                cN={'me-5'}
+                                label={"Works"}
+                                link={"#works"}
+                                cN={"me-5"}
                             />
-                            <MenuLink label={'Contact'} link={'#contact'} />
+                            <MenuLink label={"Contact"} link={"#contact"} />
                         </Col>
                     )}
                 </Row>

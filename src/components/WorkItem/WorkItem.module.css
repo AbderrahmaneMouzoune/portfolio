@@ -17,7 +17,7 @@
 }
 
 .item::after {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     width: 100%;

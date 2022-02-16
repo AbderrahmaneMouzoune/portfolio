@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion'
-import styles from './Button.module.css'
+import { motion } from "framer-motion"
+import styles from "./Button.module.css"
 
 interface IButton {
     value: string
@@ -15,8 +15,8 @@ function Button({ value, link, isFilled, classname }: IButton) {
             whileHover={{ scale: 1.05 }}
             className={
                 (isFilled ? styles.btnFilled : styles.btn) +
-                ' ' +
-                (classname ? classname : '')
+                " " +
+                (classname ? classname : "")
             }
             href={link}
         >

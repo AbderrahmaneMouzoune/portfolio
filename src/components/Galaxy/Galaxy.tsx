@@ -1,4 +1,4 @@
-import styles from './Galaxy.module.css'
+import styles from "./Galaxy.module.css"
 
 function Galaxy() {
     return (
